@@ -9,7 +9,11 @@ function login({ providers }) {
         <div key={provider.name}>
           <button
             className="bg-[#18D860] text-white p-4 rounded-lg"
-            onClick={() => signIn(provider.id, { callbackUrl: "/" })}
+            onClick={() =>
+              signIn(provider.id, {
+                callbackUrl: `${process.env.NEXTAUTH_URL}`,
+              })
+            }
           >
             Login with {provider.name}
           </button>
