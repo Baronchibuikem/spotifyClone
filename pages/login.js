@@ -11,7 +11,7 @@ function login({ providers }) {
             className="bg-[#18D860] text-white p-4 rounded-lg"
             onClick={() =>
               signIn(provider.id, {
-                callbackUrl: "/",
+                callbackUrl: `${process.env.NEXTAUTH_URL}`,
               })
             }
           >

@@ -2,7 +2,10 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
-  const token = await getToken({ req, secret: process.env.JWT_SECRET });
+  const token = await getToken({
+    req,
+    secret: process.env.NEXT_PUBLIC_JWT_SECRET,
+  });
 
   // Allow the requests if the following is true
   const { pathname } = req.nextUrl;
